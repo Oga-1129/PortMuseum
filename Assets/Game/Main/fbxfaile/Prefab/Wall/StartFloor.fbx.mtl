@@ -1,0 +1,5 @@
+newmtl Stone_floor_09
+map_Kd Stone_floor_09.png
+Kd 1 1 1
+d 1
+
