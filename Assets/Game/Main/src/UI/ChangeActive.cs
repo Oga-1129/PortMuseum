@@ -7,23 +7,25 @@ public class ChangeActive : MonoBehaviour
 {
 
     //GameObject配列
-    GameObject[] Object = new GameObject[4];
+    GameObject[] Object = new GameObject[3];
 
     //Script配列
-    ActiveScript[] ActScript = new ActiveScript[4];
+    ActiveScript[] ActScript = new ActiveScript[3];
 
     //ObjectName配列
-    string[] ObjName = new string[4]{"PlayCanvas" , "PlayerActive" , "BuildCanvas" , "MainCamera"};
+    string[] ObjName = new string[3] { "PlayCanvas", "BuildCanvas", "MainCamera" };
 
-    void Start(){
-        for(int i = 0; i < 4; i++){
+    void Start()
+    {
+        for (int i = 0; i < 3; i++)
+        {
             Object[i] = GameObject.Find(ObjName[i]);
             ActScript[i] = Object[i].GetComponent<ActiveScript>();
         }
     }
-    public void OnClick() 
+    public void OnClick()
     {
-        for(int i = 0; i < 4; i++)
+        for (int i = 0; i < 3; i++)
         {
             ActScript[i].setActive();
         }

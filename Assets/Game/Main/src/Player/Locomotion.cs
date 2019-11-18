@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Locomotion : MonoBehaviour {
+public class Locomotion : MonoBehaviour
+{
 
     //Unityの公式スクリプトレファンスにあるものと同じ
     //十字キーのみで操作(矢印キー＝前後左右移動)
@@ -17,7 +18,7 @@ public class Locomotion : MonoBehaviour {
 
     private CharacterController controller;
     private Vector3 moveDirection = Vector3.zero;
-    private float h,v;
+    private float h, v;
 
     GameObject AnimUI;
     AnimationUI animuiscript;
@@ -30,18 +31,19 @@ public class Locomotion : MonoBehaviour {
 
     private Animator animator;
 
-	// 設定したフラグの名前
-	private const string key_isRun = "IsRun";
-	private const string key_isJump = "IsJump";
+    // 設定したフラグの名前
+    private const string key_isRun = "IsRun";
+    private const string key_isJump = "IsJump";
 
     private const string playerspeed = "Speed";
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         controller = GetComponent<CharacterController>();
 
         // 自分に設定されているAnimatorコンポーネントを習得する
-		this.animator = GetComponent<Animator>();
+        this.animator = GetComponent<Animator>();
 
         AnimUI = GameObject.Find("ProfileUI");
         animuiscript = AnimUI.GetComponent<AnimationUI>();
@@ -53,24 +55,30 @@ public class Locomotion : MonoBehaviour {
         crystalcanvasscript = CrystalCanvas.GetComponent<CrystalCanvas>();
     }//Start()
 
-	// Update is called once per frame
-	void Update () {
+    // Update is called once per frame
+    void Update()
+    {
 
-		if (Input.GetKey (KeyCode.W)) {
+        if (Input.GetKey(KeyCode.W))
+        {
 
-			transform.position += transform.forward * forwardspeed * Time.deltaTime;
+            transform.position += transform.forward * forwardspeed * Time.deltaTime;
             animator.SetBool("Walk", true);
 
 
-            if(Input.GetKey(KeyCode.I)){	
+            if (Input.GetKey(KeyCode.I))
+            {
                 forwardspeed = 10.0f;
                 animator.SetBool(key_isRun, true);
-            }else{
+            }
+            else
+            {
                 forwardspeed = 6.0f;
                 animator.SetBool("IsRun", false);
             }
-		}
-        else{
+        }
+        else
+        {
             animator.SetBool("Walk", false);
             animator.SetBool("IsRun", false);
         }
@@ -79,36 +87,33 @@ public class Locomotion : MonoBehaviour {
         if (Input.GetKey(KeyCode.S) && SeachBool)
         {
             //animator.SetBool("Seach", true);
-            crystalbarscript.barmove = true;
             crystalcanvasscript.Gage = true;
             //animuiscript.OpenUI = true;
-        }else{
-            animator.SetBool("Seach", false);
         }
-        // if(!animator.IsPlaying("Seach")
-        // {
-
-        // }
 
 
-		if (Input.GetKey(KeyCode.D)) {
-			float right = Input.GetAxisRaw("Horizontal") * Time.deltaTime * angleSpeed;
+        if (Input.GetKey(KeyCode.D))
+        {
+            float right = Input.GetAxisRaw("Horizontal") * Time.deltaTime * angleSpeed;
             transform.Rotate(Vector3.up * right);
-		}
-		if (Input.GetKey (KeyCode.A)) {
-			float left = Input.GetAxisRaw("Horizontal") * Time.deltaTime * angleSpeed;
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            float left = Input.GetAxisRaw("Horizontal") * Time.deltaTime * angleSpeed;
             transform.Rotate(Vector3.up * left);
-		}
+        }
 
 
-        if (Input.GetKey(KeyCode.Space)) {
-			// Wait or RunからJumpに遷移する
-			this.animator.SetBool(key_isJump, true);
-		}
-		else {
-			// JumpからWait or Runに遷移する
-			this.animator.SetBool(key_isJump, false);
-		}
+        if (Input.GetKey(KeyCode.Space))
+        {
+            // Wait or RunからJumpに遷移する
+            this.animator.SetBool(key_isJump, true);
+        }
+        else
+        {
+            // JumpからWait or Runに遷移する
+            this.animator.SetBool(key_isJump, false);
+        }
 
     }//Update()
 

@@ -13,7 +13,7 @@ public class SelectButton : MonoBehaviour
     GameObject receiver;
     CreateController createscript;
 
-    
+
     GameObject destroycontroller;
     DestroyController destcontscript;
 
@@ -31,6 +31,9 @@ public class SelectButton : MonoBehaviour
     GameObject Load;
     LoadController loadscript;
 
+    Color color;
+    Image image;
+
     void Start()
     {
 
@@ -47,8 +50,10 @@ public class SelectButton : MonoBehaviour
         Load = GameObject.Find("LoadController");
         loadscript = Load.GetComponent<LoadController>();
 
+        image = GetComponent<Image>();
 
-        buttonnum = createscript.createnum + createscript.destroy_num; 
+
+        buttonnum = createscript.createnum + createscript.destroy_num;
 
         objGetmv[0] = GameObject.Find("posx+");
         objGetmv[1] = GameObject.Find("posx-");
@@ -58,7 +63,8 @@ public class SelectButton : MonoBehaviour
         objGetmv[4] = GameObject.Find("roty+");
         objGetmv[5] = GameObject.Find("roty-");
 
-        for(int i = 0; i < 6; i++){
+        for (int i = 0; i < 6; i++)
+        {
             scriptmv[i] = objGetmv[i].GetComponent<MoveScale>();
         }
     }
@@ -66,13 +72,25 @@ public class SelectButton : MonoBehaviour
     public void onClick()
     {
         createscript.move_num = buttonnum;
+
     }
 
     public void Update()
     {
+        if (buttonnum == createscript.move_num)
+        {
+            image.color = new Color(1.0f, 0.0f, 0.0f, 1.0f);
+        }
+        else
+        {
+            image.color = new Color(0.01568628f, 0.9921569f, 0.8862745f);
+
+        }
+
         //座標の保存
-        if(createscript.move_num == buttonnum){
-            if(Deletescript.Delete == true)
+        if (createscript.move_num == buttonnum)
+        {
+            if (Deletescript.Delete == true)
             {
                 //ボタンの破棄
                 DestroyButton();
@@ -87,9 +105,11 @@ public class SelectButton : MonoBehaviour
             }
             moviesNum = createscript.moviesnum;
         }
-        if(destcontscript.numberchange && destcontscript.destroybuttonnum < buttonnum)
+        if (destcontscript.numberchange && destcontscript.destroybuttonnum < buttonnum)
         {
+            Debug.Log(buttonnum);
             buttonnum--;
+            Debug.Log(buttonnum);
         }
     }
 

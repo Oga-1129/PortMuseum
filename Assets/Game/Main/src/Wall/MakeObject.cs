@@ -19,9 +19,12 @@ public class MakeObject : MonoBehaviour
         receiver = GameObject.Find("CreateController");
         createscript = receiver.GetComponent<CreateController>();
     }
-    public void OnClick() 
+    public void OnClick()
     {
-        createscript.objectnum[createscript.createnum] = mkobjnum;
-        createscript.createobject(0.0, 0.0, 0.0, 0.0, 0, mkobjnum);
+        if (createscript.makelimit > createscript.createnum)
+        {
+            createscript.objectnum[createscript.createnum] = mkobjnum;
+            createscript.createobject(0.0, 0.0, 0.0, 0.0, 0, mkobjnum);
+        }
     }
 }

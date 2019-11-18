@@ -17,9 +17,9 @@ public class CreateController : MonoBehaviour
     LoadController loadscript;
 
     GameObject[] objGet = new GameObject[6];
-    MoveScale[] script = new MoveScale[6];  
+    MoveScale[] script = new MoveScale[6];
     //オブジェクトの座標保存
-    public float[,] Scale = new float[48,6];
+    public float[,] Scale = new float[49, 6];
     //生成済みかの確認保存用
     public int[] creflag = new int[48];
     //壁の番号を保存
@@ -31,7 +31,6 @@ public class CreateController : MonoBehaviour
     public int moviesnum;
 
     public GameObject UsesNum = null; // Textオブジェクト
-    public GameObject SelectNum = null; // Textオブジェクト
     Text numtext;
     Text Selecttext;
 
@@ -39,8 +38,7 @@ public class CreateController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        numtext = UsesNum.GetComponent<Text> ();
-        Selecttext = SelectNum.GetComponent<Text> ();
+        numtext = UsesNum.GetComponent<Text>();
         Load = GameObject.Find("LoadController");
         loadscript = Load.GetComponent<LoadController>();
 
@@ -53,7 +51,8 @@ public class CreateController : MonoBehaviour
         objGet[5] = GameObject.Find("roty-");
 
 
-        for(int i = 0; i < 6; i++){
+        for (int i = 0; i < 6; i++)
+        {
             script[i] = objGet[i].GetComponent<MoveScale>();
         }
     }
@@ -66,21 +65,15 @@ public class CreateController : MonoBehaviour
 
     public void createobject(double positionxp, double positionxm, double positionzp, double positionzm, int num, int objnum)
     {
-        if(createnum < makelimit){
+        if (createnum <= makelimit)
+        {
             //座標0,0,0に生成
-            Instantiate (loadscript.target[objnum], new Vector3 (((float)positionxp + (float)positionxm), 0.0f, ((float)positionzp + (float)positionzm)), Quaternion.identity);
+            Instantiate(loadscript.target[objnum], new Vector3(((float)positionxp + (float)positionxm), 0.0f, ((float)positionzp + (float)positionzm)), Quaternion.identity);
         }
     }
 
     void Update()
     {
         numtext.text = createnum + "/" + makelimit;
-
-        Selectnum = move_num;
-        if(Selectnum != 0){
-            Selecttext.text = "" + Selectnum;
-        }else{
-            Selecttext.text = "NoSelect";
-        }
     }
 }

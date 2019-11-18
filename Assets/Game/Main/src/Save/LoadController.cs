@@ -5,7 +5,7 @@ using UnityEngine.Video;
 
 public class LoadController : MonoBehaviour
 {
-    
+
     GameObject DB;
     MappingDataBase dbscript;
 
@@ -43,7 +43,7 @@ public class LoadController : MonoBehaviour
     public int makes;
 
     public int moviesnum;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -59,24 +59,26 @@ public class LoadController : MonoBehaviour
         createscript = receiver.GetComponent<CreateController>();
 
 
-        for(loadnum = 1; loadnum <= 48; loadnum++)
+        for (loadnum = 1; loadnum <= 48; loadnum++)
         {
             dbscript.SelectDataBase(loadnum);
-            if(createflag == 1)
+            if (createflag == 1)
             {
                 //受け取ったデータを配列に保存
-                createscript.Scale[loadnum,0] = (float)positionxp;
-                createscript.Scale[loadnum,1] = (float)positionxm;
-                createscript.Scale[loadnum,2] = (float)positionzp;
-                createscript.Scale[loadnum,3] = (float)positionzm;
-                createscript.Scale[loadnum,4] = (float)rotationyp;
-                createscript.Scale[loadnum,5] = (float)rotationym;
+                createscript.Scale[loadnum, 0] = (float)positionxp;
+                createscript.Scale[loadnum, 1] = (float)positionxm;
+                createscript.Scale[loadnum, 2] = (float)positionzp;
+                createscript.Scale[loadnum, 3] = (float)positionzm;
+                createscript.Scale[loadnum, 4] = (float)rotationyp;
+                createscript.Scale[loadnum, 5] = (float)rotationym;
                 createscript.creflag[loadnum] = makes;
-                createscript.objectnum[loadnum-1] = objectnum;
+                createscript.objectnum[loadnum] = objectnum;
                 createscript.videonum[loadnum] = moviesnum;
-                createscript.createobject(createscript.Scale[loadnum,0], createscript.Scale[loadnum,1], createscript.Scale[loadnum,2], createscript.Scale[loadnum,3], loadnum, createscript.objectnum[loadnum-1]);
+                createscript.createobject(createscript.Scale[loadnum, 0], createscript.Scale[loadnum, 1], createscript.Scale[loadnum, 2], createscript.Scale[loadnum, 3], loadnum, createscript.objectnum[loadnum - 1]);
                 crebuttonscript.MakeButton();
-            }else{
+            }
+            else
+            {
             }
         }
     }

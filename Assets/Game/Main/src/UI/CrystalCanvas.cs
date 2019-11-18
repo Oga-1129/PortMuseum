@@ -7,9 +7,12 @@ public class CrystalCanvas : MonoBehaviour
     public bool Gage;
     public bool Login;
     private Animator animator;
-
     GameObject AnimUI;
     AnimationUI animuiscript;
+
+    GameObject CrystalBarUI;
+    CrystalBar crystalbarscript;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,24 +20,36 @@ public class CrystalCanvas : MonoBehaviour
 
         AnimUI = GameObject.Find("ProfileUI");
         animuiscript = AnimUI.GetComponent<AnimationUI>();
+
+        CrystalBarUI = GameObject.Find("Slider");
+        crystalbarscript = CrystalBarUI.GetComponent<CrystalBar>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Gage){
+        if (Gage)
+        {
             animator.SetBool("FirstMove", true);
-        }else{
+        }
+        else
+        {
             animator.SetBool("FirstMove", false);
         }
 
-        if(Login){
+        if (Login)
+        {
             animator.SetBool("LoginText", true);
-        }   
+        }
     }
     //アニメーションの終了時呼び出し
     public void MotionEnd()
     {
         animuiscript.OpenUI = true;
+    }
+
+    public void GageStart()
+    {
+        crystalbarscript.barmove = true;
     }
 }

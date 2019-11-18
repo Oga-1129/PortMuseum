@@ -11,15 +11,15 @@ public class Button_num : MonoBehaviour
     GameObject destroycontroller;
     DestroyController destcontscript;
     int Buttonnum = 0;
-    
+
     public GameObject ButtonNum = null; // Textオブジェクト
     Text buttontext;
 
-    
+
     // Start is called before the first frame update
     void Start()
     {
-        buttontext = ButtonNum.GetComponent<Text> ();
+        buttontext = ButtonNum.GetComponent<Text>();
 
         receiver = GameObject.Find("CreateController");
         createscript = receiver.GetComponent<CreateController>();
@@ -34,10 +34,10 @@ public class Button_num : MonoBehaviour
     void Update()
     {
         buttontext.text = "" + Buttonnum;
-        if(destcontscript.numberchange && destcontscript.destroybuttonnum < Buttonnum)
+        if (destcontscript.numberchange && destcontscript.destroybuttonnum < Buttonnum)
         {
             Buttonnum--;
-            if(Buttonnum == createscript.createnum)
+            if (Buttonnum == createscript.createnum)
             {
                 destcontscript.numberchange = false;
             }
