@@ -21,15 +21,16 @@ public class CrystalTrigger : MonoBehaviour
         Player = GameObject.Find("Robot_Gray");
         locomotionscript = Player.GetComponent<Locomotion>();
 
-        Camera = GameObject.Find("Camera");
+        Camera = GameObject.Find("Cameramachine");
         cameraanimuiscript = Camera.GetComponent<CameraAnimSRC>();
     }
 
-    
+
     //何かがコリジョンに当たった時
-    void OnTriggerEnter ( Collider obj  ){
+    void OnTriggerEnter(Collider obj)
+    {
         //当たったもののタグがRobotの時
-        if(obj.gameObject.tag == "Robot")
+        if (obj.gameObject.tag == "Robot")
         {
             locomotionscript.SeachBool = true;
             cameraanimuiscript.Crystal_Approach = true;
@@ -37,9 +38,10 @@ public class CrystalTrigger : MonoBehaviour
     }
 
     //当たっていたものが離れた時
-    void OnTriggerExit ( Collider obj  ){
+    void OnTriggerExit(Collider obj)
+    {
         //離れたもののタグがRobotの時
-        if(obj.gameObject.tag == "Robot")
+        if (obj.gameObject.tag == "Robot")
         {
             locomotionscript.SeachBool = false;
             cameraanimuiscript.Crystal_Approach = false;

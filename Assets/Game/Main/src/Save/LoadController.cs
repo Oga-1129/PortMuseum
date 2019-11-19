@@ -9,9 +9,6 @@ public class LoadController : MonoBehaviour
     GameObject DB;
     MappingDataBase dbscript;
 
-    GameObject createbutton;
-    CreateButton crebuttonscript;
-
     GameObject receiver;
     CreateController createscript;
 
@@ -52,9 +49,6 @@ public class LoadController : MonoBehaviour
         DB = GameObject.Find("DataBaseObject");
         dbscript = DB.GetComponent<MappingDataBase>();
 
-        createbutton = GameObject.Find("CreateButton");
-        crebuttonscript = createbutton.GetComponent<CreateButton>();
-
         receiver = GameObject.Find("CreateController");
         createscript = receiver.GetComponent<CreateController>();
 
@@ -75,7 +69,7 @@ public class LoadController : MonoBehaviour
                 createscript.objectnum[loadnum] = objectnum;
                 createscript.videonum[loadnum] = moviesnum;
                 createscript.createobject(createscript.Scale[loadnum, 0], createscript.Scale[loadnum, 1], createscript.Scale[loadnum, 2], createscript.Scale[loadnum, 3], loadnum, createscript.objectnum[loadnum - 1]);
-                crebuttonscript.MakeButton();
+                createscript.MakeButton();
             }
             else
             {

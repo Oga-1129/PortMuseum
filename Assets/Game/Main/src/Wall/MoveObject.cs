@@ -21,9 +21,6 @@ public class MoveObject : MonoBehaviour
 
     Quaternion angle = Quaternion.identity;
 
-    GameObject createBtn;
-    CreateButton crebtnscript;
-
     GameObject destroycontroller;
     DestroyController destcontscript;
 
@@ -51,9 +48,6 @@ public class MoveObject : MonoBehaviour
 
         DeleteButton = GameObject.Find("DeleteButton");
         Deletescript = DeleteButton.GetComponent<DeleteButton>();
-
-        createBtn = GameObject.Find("CreateButton");
-        crebtnscript = createBtn.GetComponent<CreateButton>();
 
         destroycontroller = GameObject.Find("DestroyController");
         destcontscript = destroycontroller.GetComponent<DestroyController>();
@@ -88,7 +82,7 @@ public class MoveObject : MonoBehaviour
         {
             if (createscript.creflag[wall_num] == 0)
             {
-                crebtnscript.MakeButton();
+                createscript.MakeButton();
             }
             //オブジェクトの座標等の計算
             pos[0] = createscript.Scale[wall_num + createscript.destroy_num, 0] + createscript.Scale[wall_num + createscript.destroy_num, 1];

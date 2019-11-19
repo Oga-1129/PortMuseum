@@ -34,7 +34,11 @@ public class CreateController : MonoBehaviour
     Text numtext;
     Text Selecttext;
 
-    int Selectnum = 0;
+    [SerializeField]
+    GameObject characterPre = null;//生成するもの
+    GameObject character = null;
+    [SerializeField]
+    Transform characterParent = null;//親
     // Start is called before the first frame update
     void Start()
     {
@@ -75,5 +79,14 @@ public class CreateController : MonoBehaviour
     void Update()
     {
         numtext.text = createnum + "/" + makelimit;
+    }
+
+    public void MakeButton()
+    {
+        if (createnum < makelimit)
+        {
+            //ボタン生成
+            character = (GameObject)Instantiate(characterPre, transform.position, transform.rotation, characterParent);
+        }
     }
 }

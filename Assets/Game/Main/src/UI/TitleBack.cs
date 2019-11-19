@@ -9,6 +9,8 @@ public class TitleBack : MonoBehaviour
     GameObject save;
     Save savescript;
 
+    public Fade fade;              //フェードキャンバス取得
+
     void Start()
     {
         save = GameObject.Find("SelectSaveData");
@@ -18,5 +20,9 @@ public class TitleBack : MonoBehaviour
     {
         titleback = true;
         savescript.saving = true;
+        fade.FadeIn(1f, () =>
+        {
+            SceneManager.LoadScene("Title");
+        });
     }
 }

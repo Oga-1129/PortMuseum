@@ -111,6 +111,7 @@ public class SelectButton : MonoBehaviour
             buttonnum--;
             Debug.Log(buttonnum);
         }
+
     }
 
     public void DestroyButton()

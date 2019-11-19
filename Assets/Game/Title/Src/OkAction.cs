@@ -5,8 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class OkAction : MonoBehaviour
 {
+    public Fade fade;              //フェードキャンバス取得
     public void OnClick()
     {
-        SceneManager.LoadScene("Main");
+        fade.FadeIn(1f, () =>
+        {
+            SceneManager.LoadScene("Main");
+        });
     }
 }
