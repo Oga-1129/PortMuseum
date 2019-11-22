@@ -8,17 +8,20 @@ public class OpenCloseProfile : MonoBehaviour
     AnimationUI animuiscript;
     public int ButtonUINum;
 
-    void Start(){
+    void Start()
+    {
         AnimUI = GameObject.Find("ProfileUI");
         animuiscript = AnimUI.GetComponent<AnimationUI>();
     }
 
     public void OnClick()
     {
-        if(animuiscript.OpenProfile[ButtonUINum] == false)
+        if (animuiscript.OpenProfile[ButtonUINum] == false)
         {
             animuiscript.OpenProfile[ButtonUINum] = true;
-        }else{
+        }
+        else
+        {
             animuiscript.OpenProfile[ButtonUINum] = false;
         }
     }

@@ -10,17 +10,20 @@ public class CameraAnimSRC : MonoBehaviour
     void Start()
     {
         // 自分に設定されているAnimatorコンポーネントを習得する
-		this.animator = GetComponent<Animator>();
+        this.animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Crystal_Approach){
+        if (Crystal_Approach)
+        {
             animator.SetBool("Forward", true);
-        }else{
+        }
+        else
+        {
             animator.SetBool("Forward", false);
         }
-        
+
     }
 }

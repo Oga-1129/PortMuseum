@@ -10,7 +10,7 @@ public class CloseMenu : MonoBehaviour
     void Start()
     {
         AnimUI = GameObject.Find("ProfileUI");
-        animuiscript = AnimUI.GetComponent<AnimationUI>();        
+        animuiscript = AnimUI.GetComponent<AnimationUI>();
     }
     //メニューを閉じるアニメーション
     public void OnClick()

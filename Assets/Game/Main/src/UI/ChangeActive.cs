@@ -6,14 +6,20 @@ using UnityEngine.UI;
 public class ChangeActive : MonoBehaviour
 {
 
-    //GameObject配列
-    GameObject[] Object = new GameObject[3];
+    public GameObject[] NPC = new GameObject[0];
+
+    AIMove[] aiscript = new AIMove[2];
+    public int AI_arraysize;
+
+
 
     //Script配列
     ActiveScript[] ActScript = new ActiveScript[3];
 
+    public int Activearraysize;
+
     //ObjectName配列
-    string[] ObjName = new string[3] { "PlayCanvas", "BuildCanvas", "MainCamera" };
+    public GameObject[] ObjName = new GameObject[4];
     // string[] ObjName = new string[4] { "PlayCanvas", "BuildCanvas", "MainCamera", "Camera" };
     // string[] ObjName = new string[2] { "PlayCanvas", "BuildCanvas" };
 
@@ -25,10 +31,14 @@ public class ChangeActive : MonoBehaviour
         //     ActScript[i] = Object[i].GetComponent<ActiveScript>();
         // }
 
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < Activearraysize; i++)
         {
-            Object[i] = GameObject.Find(ObjName[i]);
-            ActScript[i] = Object[i].GetComponent<ActiveScript>();
+            ActScript[i] = ObjName[i].GetComponent<ActiveScript>();
+        }
+
+        for (int j = 0; j < AI_arraysize; j++)
+        {
+            aiscript[j] = NPC[j].GetComponent<AIMove>();
         }
 
         // for (int i = 0; i < 2; i++)
@@ -45,11 +55,15 @@ public class ChangeActive : MonoBehaviour
         //     ActScript[i].setActive();
         // }
 
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < Activearraysize; i++)
         {
             ActScript[i].setActive();
         }
 
+        for (int j = 0; j < AI_arraysize; j++)
+        {
+            aiscript[j].move = true;
+        }
         // for (int i = 0; i < 2; i++)
         // {
         //     ActScript[i].setActive();

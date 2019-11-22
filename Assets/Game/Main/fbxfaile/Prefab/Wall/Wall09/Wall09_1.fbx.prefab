@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &6637543613230886446
 Transform:
@@ -119,6 +119,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Movies
       objectReference: {fileID: 0}
+    - target: {fileID: 9196446807392823973, guid: 4dba325dd437e4c90b8d2c5f62f9c866,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 9196446807392823966, guid: 4dba325dd437e4c90b8d2c5f62f9c866,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -195,6 +200,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1230760464308045018, guid: e22835b2e150e488cafc2d35ad6025a8,
         type: 3}
+    - target: {fileID: 9196446806202217474, guid: 4dba325dd437e4c90b8d2c5f62f9c866,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3872603454510687983, guid: 4dba325dd437e4c90b8d2c5f62f9c866,
         type: 3}
       propertyPath: m_Size.z

@@ -15,9 +15,12 @@ public class LoadClick : MonoBehaviour
 
     public void OnClick()
     {
-        if(!loadmovescript.Load){
+        if (!loadmovescript.Load)
+        {
             loadmovescript.Load = true;
-        }else{
+        }
+        else
+        {
             loadmovescript.Load = false;
         }
     }

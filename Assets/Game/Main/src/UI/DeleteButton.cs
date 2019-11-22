@@ -7,7 +7,7 @@ public class DeleteButton : MonoBehaviour
     GameObject receiver;
     CreateController createscript;
     public bool Delete = false;
-    
+
     void Start()
     {
         receiver = GameObject.Find("CreateController");

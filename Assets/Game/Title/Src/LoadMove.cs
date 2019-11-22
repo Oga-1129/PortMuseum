@@ -14,55 +14,58 @@ public class LoadMove : MonoBehaviour
     public static int setSaveData;
 
     public bool ReSelect;
-    
+
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponent <Animator> ();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Load){
-            animator.SetBool("Load",true);
-        }else{
-            animator.SetBool("Load",false);
+        if (Load)
+        {
+            animator.SetBool("Load", true);
+        }
+        else
+        {
+            animator.SetBool("Load", false);
         }
 
-        switch(selectDataNum)
+        switch (selectDataNum)
         {
             case 1:
-                animator.SetBool("Data01",true);
-            break;
+                animator.SetBool("Data01", true);
+                break;
 
             case 2:
-                animator.SetBool("Data02",true);
-            break;
+                animator.SetBool("Data02", true);
+                break;
 
             case 3:
-                animator.SetBool("Data03",true);
-            break;
+                animator.SetBool("Data03", true);
+                break;
 
             case 4:
-                animator.SetBool("Data04",true);
-            break;
+                animator.SetBool("Data04", true);
+                break;
 
             case 5:
-                animator.SetBool("Data05",true);
-            break;
+                animator.SetBool("Data05", true);
+                break;
 
             default:
                 break;
         }
 
-        if(ReSelect)
+        if (ReSelect)
         {
-            animator.SetBool("Data01",false);
-            animator.SetBool("Data02",false);
-            animator.SetBool("Data03",false);
-            animator.SetBool("Data04",false);
-            animator.SetBool("Data05",false);
+            animator.SetBool("Data01", false);
+            animator.SetBool("Data02", false);
+            animator.SetBool("Data03", false);
+            animator.SetBool("Data04", false);
+            animator.SetBool("Data05", false);
             ReSelect = false;
             selectDataNum = 0;
         }

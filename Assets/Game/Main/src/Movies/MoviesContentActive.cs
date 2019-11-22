@@ -9,10 +9,13 @@ public class MoviesContentActive : MonoBehaviour
     // Update is called once per frame
     public void Active()
     {
-        if(Movies_ON){
+        if (Movies_ON)
+        {
             gameObject.SetActive(true);
             Movies_ON = false;
-        }else{
+        }
+        else
+        {
             gameObject.SetActive(false);
             Movies_ON = true;
         }

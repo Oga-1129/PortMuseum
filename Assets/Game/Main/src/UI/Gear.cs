@@ -17,10 +17,12 @@ public class Gear : MonoBehaviour
 
     public void onClick()
     {
-        if(!Open)
+        if (!Open)
         {
             Open = true;
-        }else{
+        }
+        else
+        {
             Open = false;
         }
         //UIの表示/非表示を切り替える

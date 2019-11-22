@@ -19,6 +19,6 @@ public class SelectSaveData : MonoBehaviour
 
     public void OnClick()
     {
-       loadmovescript.selectDataNum = DataNum;
+        loadmovescript.selectDataNum = DataNum;
     }
 }

@@ -9,16 +9,21 @@ public class ActiveScript : MonoBehaviour
 
     void Update()
     {
-        if(Instance == true){
+        if (Instance == true)
+        {
             setActive();
             Instance = false;
         }
     }
-    public void setActive(){
-        if(Active == false){
+    public void setActive()
+    {
+        if (Active == false)
+        {
             gameObject.SetActive(true);
             Active = true;
-        }else{
+        }
+        else
+        {
             gameObject.SetActive(false);
             Active = false;
         }

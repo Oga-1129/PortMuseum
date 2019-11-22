@@ -12,7 +12,7 @@ public class SaveMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponent <Animator> ();
+        animator = GetComponent<Animator>();
         Gears = GameObject.Find("Gear");
         Gearscript = Gears.GetComponent<Gear>();
     }
@@ -20,16 +20,22 @@ public class SaveMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Gearscript.Open){
-            animator.SetBool("Open",true);
-        }else{
-            animator.SetBool("Open",false);
-        }   
+        if (Gearscript.Open)
+        {
+            animator.SetBool("Open", true);
+        }
+        else
+        {
+            animator.SetBool("Open", false);
+        }
 
-        if(selectdata){
-            animator.SetBool("DataSelect",true);
-        }else{
-            animator.SetBool("DataSelect",false);
+        if (selectdata)
+        {
+            animator.SetBool("DataSelect", true);
+        }
+        else
+        {
+            animator.SetBool("DataSelect", false);
         }
     }
 }

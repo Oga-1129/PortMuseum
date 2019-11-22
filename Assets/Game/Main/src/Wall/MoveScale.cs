@@ -18,8 +18,8 @@ public class MoveScale : MonoBehaviour
         receiver = GameObject.Find("CreateController");
         createscript = receiver.GetComponent<CreateController>();
     }
-    public void OnClick() 
+    public void OnClick()
     {
-        createscript.Scale[createscript.move_num,num] += changescale;
+        createscript.Scale[createscript.move_num, num] += changescale;
     }
 }

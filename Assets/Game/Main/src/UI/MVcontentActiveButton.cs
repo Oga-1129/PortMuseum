@@ -25,7 +25,8 @@ public class MVcontentActiveButton : MonoBehaviour
 
     public void OnClick()
     {
-        for(int i = 0; i < 4; i++){
+        for (int i = 0; i < 4; i++)
+        {
             createscript[i].Active();
         }
     }

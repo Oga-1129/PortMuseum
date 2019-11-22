@@ -7,11 +7,14 @@ public class GearActive : MonoBehaviour
     public bool active = false;
     public void GearActives()
     {
-        if(active == true){
-            gameObject.SetActive (false);
+        if (active == true)
+        {
+            gameObject.SetActive(false);
             active = false;
-        }else{
-            gameObject.SetActive (true);
+        }
+        else
+        {
+            gameObject.SetActive(true);
             active = true;
         }
     }

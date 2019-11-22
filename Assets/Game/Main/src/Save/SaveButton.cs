@@ -13,10 +13,12 @@ public class SaveButton : MonoBehaviour
     }
     public void OnClick()
     {
-        if(!savemenuscript.selectdata)
+        if (!savemenuscript.selectdata)
         {
             savemenuscript.selectdata = true;
-        }else{
+        }
+        else
+        {
             savemenuscript.selectdata = false;
         }
     }

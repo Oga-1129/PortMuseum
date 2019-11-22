@@ -17,6 +17,6 @@ public class NoAction : MonoBehaviour
 
     public void OnClick()
     {
-       loadmovescript.ReSelect = true;
+        loadmovescript.ReSelect = true;
     }
 }

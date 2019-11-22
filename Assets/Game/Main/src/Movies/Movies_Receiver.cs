@@ -11,7 +11,7 @@ public class Movies_Receiver : MonoBehaviour
     void Start()
     {
         moves_on = new bool[moves];
-        for(int i = 0; i < moves;i++)
+        for (int i = 0; i < moves; i++)
         {
             moves_on[i] = false;
         }

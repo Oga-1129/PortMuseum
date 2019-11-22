@@ -61,26 +61,13 @@ public class Locomotion : MonoBehaviour
 
         if (Input.GetKey(KeyCode.W))
         {
-
             transform.position += transform.forward * forwardspeed * Time.deltaTime;
-            animator.SetBool("Walk", true);
-
-
-            if (Input.GetKey(KeyCode.I))
-            {
-                forwardspeed = 10.0f;
-                animator.SetBool(key_isRun, true);
-            }
-            else
-            {
-                forwardspeed = 6.0f;
-                animator.SetBool("IsRun", false);
-            }
+            animator.SetBool(key_isRun, true);
         }
         else
         {
-            animator.SetBool("Walk", false);
-            animator.SetBool("IsRun", false);
+            // animator.SetBool("Walk", false);
+            animator.SetBool(key_isRun, false);
         }
 
 
@@ -104,7 +91,7 @@ public class Locomotion : MonoBehaviour
         }
 
 
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             // Wait or RunからJumpに遷移する
             this.animator.SetBool(key_isJump, true);

@@ -2,14 +2,16 @@
 using System.Collections;
 using UnityEngine.UI; // ←※これを忘れずに入れる
 
-public class CrystalBar: MonoBehaviour {
+public class CrystalBar : MonoBehaviour
+{
 
-    public bool barmove = false; 
+    public bool barmove = false;
     Slider _slider;
 
     GameObject CrystalCanvas;
     CrystalCanvas crystalcanvasscript;
-    void Start () {
+    void Start()
+    {
         // スライダーを取得する
         _slider = GameObject.Find("Slider").GetComponent<Slider>();
         CrystalCanvas = GameObject.Find("Canvas");
@@ -17,15 +19,16 @@ public class CrystalBar: MonoBehaviour {
     }
 
     float logingage = 0;
-    void Update () 
+    void Update()
     {
-        if(barmove){
+        if (barmove)
+        {
             // ゲージの上昇
             logingage += 0.005f;
             // ゲージに値を設定
             _slider.value = logingage;
 
-            if(logingage >= 1)
+            if (logingage >= 1)
             {
                 crystalcanvasscript.Login = true;
             }

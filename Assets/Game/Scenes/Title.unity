@@ -665,7 +665,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f19fafe270eba4e5abcc29b6c46759ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fade: {fileID: 798618261}
+  fade: {fileID: 1804073523}
 --- !u!4 &432761024
 Transform:
   m_ObjectHideFlags: 0
@@ -674,7 +674,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 432761022}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -9}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1149,11 +1149,16 @@ PrefabInstance:
       propertyPath: cutoutRange
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11486218, guid: 53c22e1773be7f84aad8ed8b7b58fa6e, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 2100000, guid: c08cd46eaf9a0d34eb221ba2978cc476, type: 2}
     - target: {fileID: 11491604, guid: 53c22e1773be7f84aad8ed8b7b58fa6e, type: 3}
       propertyPath: StartFade
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11491604, guid: 53c22e1773be7f84aad8ed8b7b58fa6e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 53c22e1773be7f84aad8ed8b7b58fa6e, type: 3}
 --- !u!1 &724037661
 GameObject:
@@ -1309,18 +1314,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 776047012}
   m_CullTransparentMesh: 0
---- !u!114 &798618261 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 11491604, guid: 53c22e1773be7f84aad8ed8b7b58fa6e,
-    type: 3}
-  m_PrefabInstance: {fileID: 606858719}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d416d1715bbc06d4789612d1211da8d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &803191363
 GameObject:
   m_ObjectHideFlags: 0
@@ -2586,7 +2579,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b410c4433d7f41d2bda4b2e251c7f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fade: {fileID: 798618261}
+  fade: {fileID: 0}
 --- !u!114 &1466819641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2729,7 +2722,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0f43bfe2b90f4f11875df76f494ff64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fade: {fileID: 798618261}
+  fade: {fileID: 1804073523}
 --- !u!114 &1488023079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3270,6 +3263,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1785528783}
   m_CullTransparentMesh: 0
+--- !u!1 &1804073518 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 141186, guid: 53c22e1773be7f84aad8ed8b7b58fa6e,
+    type: 3}
+  m_PrefabInstance: {fileID: 606858719}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1804073523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1804073518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb870b85b7f0c47aa814d9ba9d471b34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StartFade: 1
 --- !u!1 &1833609189
 GameObject:
   m_ObjectHideFlags: 0

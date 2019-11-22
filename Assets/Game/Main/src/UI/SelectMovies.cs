@@ -15,7 +15,7 @@ public class SelectMovies : MonoBehaviour
         receiver = GameObject.Find("CreateController");
         createscript = receiver.GetComponent<CreateController>();
     }
-    
+
     public void OnClick()
     {
         //動画の注文
