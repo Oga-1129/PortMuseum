@@ -8,17 +8,17 @@ public class SelectButton : MonoBehaviour
     //Transformボタンのオブジェクト
     GameObject[] objGetmv = new GameObject[6];
     //Transformボタンのスクリプト
-    MoveScale[] scriptmv = new MoveScale[6];
+    Move_Scale[] scriptmv = new Move_Scale[6];
 
     GameObject receiver;
-    CreateController createscript;
+    Create_Controller createscript;
 
 
-    GameObject destroycontroller;
-    DestroyController destcontscript;
+    GameObject Destroy_Controller;
+    Destroy_Controller destcontscript;
 
     GameObject DeleteButton;
-    DeleteButton Deletescript;
+    Delete_Button Deletescript;
 
     public float[] savests = new float[6];
 
@@ -29,7 +29,7 @@ public class SelectButton : MonoBehaviour
     int moviesNum;
 
     GameObject Load;
-    LoadController loadscript;
+    Load_Controller loadscript;
 
     Color color;
     Image image;
@@ -38,17 +38,17 @@ public class SelectButton : MonoBehaviour
     {
 
         DeleteButton = GameObject.Find("DeleteButton");
-        Deletescript = DeleteButton.GetComponent<DeleteButton>();
+        Deletescript = DeleteButton.GetComponent<Delete_Button>();
 
 
-        receiver = GameObject.Find("CreateController");
-        createscript = receiver.GetComponent<CreateController>();
+        receiver = GameObject.Find("Create_Controller");
+        createscript = receiver.GetComponent<Create_Controller>();
 
-        destroycontroller = GameObject.Find("DestroyController");
-        destcontscript = destroycontroller.GetComponent<DestroyController>();
+        Destroy_Controller = GameObject.Find("Destroy_Controller");
+        destcontscript = Destroy_Controller.GetComponent<Destroy_Controller>();
 
-        Load = GameObject.Find("LoadController");
-        loadscript = Load.GetComponent<LoadController>();
+        Load = GameObject.Find("Load_Controller");
+        loadscript = Load.GetComponent<Load_Controller>();
 
         image = GetComponent<Image>();
 
@@ -65,7 +65,7 @@ public class SelectButton : MonoBehaviour
 
         for (int i = 0; i < 6; i++)
         {
-            scriptmv[i] = objGetmv[i].GetComponent<MoveScale>();
+            scriptmv[i] = objGetmv[i].GetComponent<Move_Scale>();
         }
     }
 

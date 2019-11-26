@@ -6,10 +6,10 @@ using UnityEngine.UI;
 public class Button_num : MonoBehaviour
 {
     GameObject receiver;
-    CreateController createscript;
+    Create_Controller createscript;
 
-    GameObject destroycontroller;
-    DestroyController destcontscript;
+    GameObject Destroy_Controller;
+    Destroy_Controller destcontscript;
     int Buttonnum = 0;
 
     public GameObject ButtonNum = null; // Textオブジェクト
@@ -21,10 +21,10 @@ public class Button_num : MonoBehaviour
     {
         buttontext = ButtonNum.GetComponent<Text>();
 
-        receiver = GameObject.Find("CreateController");
-        createscript = receiver.GetComponent<CreateController>();
-        destroycontroller = GameObject.Find("DestroyController");
-        destcontscript = destroycontroller.GetComponent<DestroyController>();
+        receiver = GameObject.Find("Create_Controller");
+        createscript = receiver.GetComponent<Create_Controller>();
+        Destroy_Controller = GameObject.Find("Destroy_Controller");
+        destcontscript = Destroy_Controller.GetComponent<Destroy_Controller>();
 
 
         Buttonnum = createscript.createnum;

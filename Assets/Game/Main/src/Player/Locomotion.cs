@@ -21,13 +21,13 @@ public class Locomotion : MonoBehaviour
     private float h, v;
 
     GameObject AnimUI;
-    AnimationUI animuiscript;
+    Animation_UI animuiscript;
 
     GameObject CrystalBarUI;
-    CrystalBar crystalbarscript;
+    Crystal_Bar crystalbarscript;
 
     GameObject CrystalCanvas;
-    CrystalCanvas crystalcanvasscript;
+    Crystal_Canvas crystalcanvasscript;
 
     private Animator animator;
 
@@ -46,13 +46,13 @@ public class Locomotion : MonoBehaviour
         this.animator = GetComponent<Animator>();
 
         AnimUI = GameObject.Find("ProfileUI");
-        animuiscript = AnimUI.GetComponent<AnimationUI>();
+        animuiscript = AnimUI.GetComponent<Animation_UI>();
 
-        CrystalBarUI = GameObject.Find("Slider");
-        crystalbarscript = CrystalBarUI.GetComponent<CrystalBar>();
+        CrystalBarUI = GameObject.Find("Crystal_Bar");
+        crystalbarscript = CrystalBarUI.GetComponent<Crystal_Bar>();
 
-        CrystalCanvas = GameObject.Find("Canvas");
-        crystalcanvasscript = CrystalCanvas.GetComponent<CrystalCanvas>();
+        CrystalCanvas = GameObject.Find("Crystal_Canvas");
+        crystalcanvasscript = CrystalCanvas.GetComponent<Crystal_Canvas>();
     }//Start()
 
     // Update is called once per frame

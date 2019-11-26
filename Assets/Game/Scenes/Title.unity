@@ -2579,7 +2579,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b410c4433d7f41d2bda4b2e251c7f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fade: {fileID: 0}
+  fade: {fileID: 1804073523}
 --- !u!114 &1466819641
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -11,14 +11,14 @@ public class ObjectClick : MonoBehaviour
     public string objectName;
 
     GameObject receiver;
-    CreateController createscript;
+    Create_Controller createscript;
 
     int wall_num = 0;
 
     void Start()
     {
-        receiver = GameObject.Find("CreateController");
-        createscript = receiver.GetComponent<CreateController>();
+        receiver = GameObject.Find("Create_Controller");
+        createscript = receiver.GetComponent<Create_Controller>();
         objectdate = new float[100, 4, 4];
         objectdate[0, 0, 0] = 0.0f;
     }

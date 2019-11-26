@@ -5,14 +5,14 @@ using UnityEngine;
 public class Gear : MonoBehaviour
 {
     GameObject Gears;
-    GearActive Gearscript;
+    Active_Save Gearscript;
 
     public bool Open;
 
     void Start()
     {
         Gears = GameObject.Find("Gear-Active");
-        Gearscript = Gears.GetComponent<GearActive>();
+        Gearscript = Gears.GetComponent<Active_Save>();
     }
 
     public void onClick()
@@ -26,6 +26,6 @@ public class Gear : MonoBehaviour
             Open = false;
         }
         //UIの表示/非表示を切り替える
-        Gearscript.GearActives();
+        Gearscript.Active_Saves();
     }
 }

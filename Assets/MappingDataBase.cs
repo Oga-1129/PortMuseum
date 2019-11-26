@@ -10,7 +10,7 @@ public class MappingDataBase : MonoBehaviour
     Save savescript;
 
     GameObject Load;
-    LoadController loadscript;
+    Load_Controller loadscript;
 
     void Start()
     {
@@ -18,8 +18,8 @@ public class MappingDataBase : MonoBehaviour
         save = GameObject.Find("SelectSaveData");
         savescript = save.GetComponent<Save>();
 
-        Load = GameObject.Find("LoadController");
-        loadscript = Load.GetComponent<LoadController>();
+        Load = GameObject.Find("Load_Controller");
+        loadscript = Load.GetComponent<Load_Controller>();
 
 
         //データベースにアクセス

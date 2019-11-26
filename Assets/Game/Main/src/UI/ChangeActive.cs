@@ -14,7 +14,7 @@ public class ChangeActive : MonoBehaviour
 
 
     //Script配列
-    ActiveScript[] ActScript = new ActiveScript[3];
+    Active_Script[] ActScript = new Active_Script[3];
 
     public int Activearraysize;
 
@@ -33,7 +33,7 @@ public class ChangeActive : MonoBehaviour
 
         for (int i = 0; i < Activearraysize; i++)
         {
-            ActScript[i] = ObjName[i].GetComponent<ActiveScript>();
+            ActScript[i] = ObjName[i].GetComponent<Active_Script>();
         }
 
         for (int j = 0; j < AI_arraysize; j++)

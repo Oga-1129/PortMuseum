@@ -11,7 +11,7 @@ public class Movies_Controller : MonoBehaviour
     Movies_Receiver script_receiver;
 
     GameObject receiver;
-    CreateController createscript;
+    Create_Controller createscript;
 
     int buttonnum = 0;
     int moviesNum = 0;
@@ -19,15 +19,15 @@ public class Movies_Controller : MonoBehaviour
     bool MoviesStart = false;
 
     GameObject Load;
-    LoadController loadscript;
+    Load_Controller loadscript;
 
     void Start()
     {
-        receiver = GameObject.Find("CreateController");
-        createscript = receiver.GetComponent<CreateController>();
+        receiver = GameObject.Find("Create_Controller");
+        createscript = receiver.GetComponent<Create_Controller>();
 
-        Load = GameObject.Find("LoadController");
-        loadscript = Load.GetComponent<LoadController>();
+        Load = GameObject.Find("Load_Controller");
+        loadscript = Load.GetComponent<Load_Controller>();
 
         var videoPlayer = screen.AddComponent<VideoPlayer>();	// videoPlayeコンポーネントの追加
         script_receiver = move_receiver.GetComponent<Movies_Receiver>();
