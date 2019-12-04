@@ -71,7 +71,6 @@ public class Create_Controller : MonoBehaviour
     {
         if (createnum <= makelimit)
         {
-            Debug.Log(objnum);
             Instantiate(loadscript.target[objnum], new Vector3(((float)positionxp + (float)positionxm), 0.0f, ((float)positionzp + (float)positionzm)), Quaternion.identity);
         }
     }

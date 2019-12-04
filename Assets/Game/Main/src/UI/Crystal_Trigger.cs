@@ -18,7 +18,7 @@ public class Crystal_Trigger : MonoBehaviour
         AnimUI = GameObject.Find("ProfileUI");
         animuiscript = AnimUI.GetComponent<Animation_UI>();
 
-        Player = GameObject.Find("Robot_Gray");
+        Player = GameObject.Find("紅坂理音");
         locomotionscript = Player.GetComponent<Locomotion>();
 
         Camera = GameObject.Find("Cameramachine");
