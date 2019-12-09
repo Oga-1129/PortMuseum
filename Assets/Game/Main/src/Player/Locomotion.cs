@@ -14,6 +14,10 @@ public class Locomotion : MonoBehaviour
     public float jumpSpeed = 8.0F;   //ジャンプ力
     public float gravity = 20.0F;    //重力の大きさ
 
+
+    //移動速度
+    private const float SPEED = 0.1f;
+
     public bool SeachBool;
 
     private CharacterController controller;
@@ -56,52 +60,20 @@ public class Locomotion : MonoBehaviour
     }//Start()
 
     // Update is called once per frame
+    //先ほど作成したJoystick
+    [SerializeField]
+    private Joystick _joystick = null;
     void Update()
     {
+        Vector3 pos = transform.position;
 
-        if (Input.GetKey(KeyCode.W))
-        {
-            transform.position += transform.forward * forwardspeed * Time.deltaTime;
-            animator.SetBool(key_isRun, true);
-        }
-        else
-        {
-            // animator.SetBool("Walk", false);
-            animator.SetBool(key_isRun, false);
-        }
+        pos.x += _joystick.Position.x * SPEED;
+        pos.z += _joystick.Position.y * SPEED;
 
+        // transform.position = pos;
 
-        if (Input.GetKey(KeyCode.S) && SeachBool)
-        {
-            //animator.SetBool("Seach", true);
-            crystalcanvasscript.Gage = true;
-            //animuiscript.OpenUI = true;
-        }
-
-
-        if (Input.GetKey(KeyCode.D))
-        {
-            float right = Input.GetAxisRaw("Horizontal") * Time.deltaTime * angleSpeed;
-            transform.Rotate(Vector3.up * right);
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            float left = Input.GetAxisRaw("Horizontal") * Time.deltaTime * angleSpeed;
-            transform.Rotate(Vector3.up * left);
-        }
-
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            // Wait or RunからJumpに遷移する
-            this.animator.SetBool(key_isJump, true);
-        }
-        else
-        {
-            // JumpからWait or Runに遷移する
-            this.animator.SetBool(key_isJump, false);
-        }
-
+        GetComponent<Animator>().SetFloat("X", _joystick.Position.x);
+        GetComponent<Animator>().SetFloat("Y", _joystick.Position.y);
     }//Update()
 
 }
