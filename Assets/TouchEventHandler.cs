@@ -195,14 +195,14 @@ IDragHandler
         //タップ位置を画面内の座標に変換
         Vector2 screenPos = Vector2.zero;
         RectTransformUtility.ScreenPointToLocalPointInRectangle(GetComponent<RectTransform>(),
-          new Vector2(Input.mousePosition.x, Input.mousePosition.y),
-          null,
-          out screenPos
+            new Vector2(Input.mousePosition.x, Input.mousePosition.y),
+            null,
+            out screenPos
         );
 
         //ワールド座標に変換
         Vector3 tapWorldPoint = Camera.main.ScreenToWorldPoint(
-          new Vector3(screenPos.x, screenPos.y, -Camera.main.transform.position.z)
+            new Vector3(screenPos.x, screenPos.y, -Camera.main.transform.position.z)
         );
 
         return tapWorldPoint;

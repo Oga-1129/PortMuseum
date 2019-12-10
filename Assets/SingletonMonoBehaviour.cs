@@ -53,8 +53,8 @@ public class SingletonMonoBehaviour<T> : MonoBehaviourWithInit where T : MonoBeh
             return;
         }
 
-        //自分じゃない場合は重複して存在しているので、エラー
-        Debug.LogError(typeof(T) + " is duplicated");
+        // //自分じゃない場合は重複して存在しているので、エラー
+        // Debug.LogError(typeof(T) + " is duplicated");
     }
 
 }

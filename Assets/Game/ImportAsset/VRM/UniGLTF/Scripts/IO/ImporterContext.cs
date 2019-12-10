@@ -20,7 +20,7 @@ namespace UniGLTF
     /// <summary>
     /// GLTF importer
     /// </summary>
-    public class ImporterContext: IDisposable
+    public class ImporterContext : IDisposable
     {
         #region MeasureTime
         bool m_showSpeedLog
@@ -690,9 +690,9 @@ namespace UniGLTF
 
             yield return null;
         }
-#endregion
+        #endregion
 
-#region Imported
+        #region Imported
         public GameObject Root;
         public List<Transform> Nodes = new List<Transform>();
 
@@ -741,7 +741,7 @@ namespace UniGLTF
         {
             foreach (var x in Meshes)
             {
-                foreach(var y in x.Renderers)
+                foreach (var y in x.Renderers)
                 {
                     y.enabled = true;
                 }
@@ -819,11 +819,11 @@ namespace UniGLTF
                 var loaded = assetPath.LoadAsset<Material>();
 
                 // replace component reference
-                foreach(var mesh in Meshes)
+                foreach (var mesh in Meshes)
                 {
-                    foreach(var r in mesh.Renderers)
+                    foreach (var r in mesh.Renderers)
                     {
-                        for(int i=0; i<r.sharedMaterials.Length; ++i)
+                        for (int i = 0; i < r.sharedMaterials.Length; ++i)
                         {
                             if (r.sharedMaterials.Contains(o))
                             {
@@ -892,12 +892,12 @@ namespace UniGLTF
             {
                 Debug.LogFormat("replace prefab: {0}", prefabPath);
                 var prefab = prefabPath.LoadAsset<GameObject>();
-                PrefabUtility.ReplacePrefab(Root, prefab, ReplacePrefabOptions.ReplaceNameBased);
+                //PrefabUtility.ReplacePrefab(Root, prefab, ReplacePrefabOptions.ReplaceNameBased);
             }
             else
             {
                 Debug.LogFormat("create prefab: {0}", prefabPath);
-                PrefabUtility.CreatePrefab(prefabPath.Value, Root);
+                //PrefabUtility.CreatePrefab(prefabPath.Value, Root);
             }
             foreach (var x in paths)
             {

@@ -13,10 +13,12 @@ public class Locomotion : MonoBehaviour
     public float angleSpeed = 200;
     public float jumpSpeed = 8.0F;   //ジャンプ力
     public float gravity = 20.0F;    //重力の大きさ
+    float minAngle = 0.0F;
+    float maxAngle = 90.0F;
 
 
     //移動速度
-    private const float SPEED = 0.1f;
+    private const float SPEED = 5.0f;
 
     public bool SeachBool;
 
@@ -41,10 +43,14 @@ public class Locomotion : MonoBehaviour
 
     private const string playerspeed = "Speed";
 
+    private Rigidbody rb;
+
     // Use this for initialization
     void Start()
     {
         controller = GetComponent<CharacterController>();
+
+        rb = this.transform.GetComponent<Rigidbody>();
 
         // 自分に設定されているAnimatorコンポーネントを習得する
         this.animator = GetComponent<Animator>();
@@ -62,18 +68,21 @@ public class Locomotion : MonoBehaviour
     // Update is called once per frame
     //先ほど作成したJoystick
     [SerializeField]
-    private Joystick _joystick = null;
+    private Joystick _Velocityjoystick = null;
     void Update()
     {
         Vector3 pos = transform.position;
-
-        pos.x += _joystick.Position.x * SPEED;
-        pos.z += _joystick.Position.y * SPEED;
+        // pos.x += _Velocityjoystick.Position.x * SPEED;
+        //
 
         // transform.position = pos;
+        controller.SimpleMove(transform.forward * _Velocityjoystick.Position.y * SPEED);
 
-        GetComponent<Animator>().SetFloat("X", _joystick.Position.x);
-        GetComponent<Animator>().SetFloat("Y", _joystick.Position.y);
+        //方向転換
+        transform.Rotate(new Vector3(0, _Velocityjoystick.Position.x, 0));
+
+        //アニメーションブレンド
+        GetComponent<Animator>().SetFloat("X", _Velocityjoystick.Position.x);
+        GetComponent<Animator>().SetFloat("Y", _Velocityjoystick.Position.y);
     }//Update()
-
 }
