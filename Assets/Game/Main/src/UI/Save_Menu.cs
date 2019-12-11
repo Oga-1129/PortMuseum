@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Save_Menu : MonoBehaviour
 {
-    GameObject Gears;
+    public GameObject Gears;
     Gear Gearscript;
     private Animator animator;
 
@@ -13,7 +13,6 @@ public class Save_Menu : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        Gears = GameObject.Find("Gear");
         Gearscript = Gears.GetComponent<Gear>();
     }
 

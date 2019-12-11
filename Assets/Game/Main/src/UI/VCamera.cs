@@ -12,12 +12,10 @@ public class VCamera : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log("vcamera1");
             vcamera1.Priority += 100;
         }
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            Debug.Log("vcamera2");
             vcamera2.Priority += 100;
         }
     }

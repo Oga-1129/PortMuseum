@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class Gear : MonoBehaviour
 {
-    GameObject Gears;
+    public GameObject Gears;
     Active_Save Gearscript;
 
     public bool Open;
 
     void Start()
     {
-        Gears = GameObject.Find("Gear-Active");
         Gearscript = Gears.GetComponent<Active_Save>();
     }
 

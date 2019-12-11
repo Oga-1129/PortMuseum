@@ -4,24 +4,21 @@ using UnityEngine;
 
 public class Crystal_Trigger : MonoBehaviour
 {
-    GameObject AnimUI;
+    public GameObject AnimUI;
     Animation_UI animuiscript;
 
-    GameObject Player;
+    public GameObject Player;
     Locomotion locomotionscript;
 
-    GameObject Camera;
+    public GameObject Camera;
     CameraAnimSRC cameraanimuiscript;
     // Start is called before the first frame update
     void Start()
     {
-        AnimUI = GameObject.Find("ProfileUI");
         animuiscript = AnimUI.GetComponent<Animation_UI>();
 
-        Player = GameObject.Find("紅坂理音");
         locomotionscript = Player.GetComponent<Locomotion>();
 
-        Camera = GameObject.Find("Cameramachine");
         cameraanimuiscript = Camera.GetComponent<CameraAnimSRC>();
     }
 
@@ -30,7 +27,7 @@ public class Crystal_Trigger : MonoBehaviour
     void OnTriggerEnter(Collider obj)
     {
         //当たったもののタグがRobotの時
-        if (obj.gameObject.tag == "Robot")
+        if (obj.gameObject.tag == "Player")
         {
             locomotionscript.SeachBool = true;
             cameraanimuiscript.Crystal_Approach = true;
@@ -41,7 +38,7 @@ public class Crystal_Trigger : MonoBehaviour
     void OnTriggerExit(Collider obj)
     {
         //離れたもののタグがRobotの時
-        if (obj.gameObject.tag == "Robot")
+        if (obj.gameObject.tag == "Player")
         {
             locomotionscript.SeachBool = false;
             cameraanimuiscript.Crystal_Approach = false;

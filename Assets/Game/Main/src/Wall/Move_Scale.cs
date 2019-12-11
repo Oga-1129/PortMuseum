@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Move_Scale : MonoBehaviour
 {
-    GameObject receiver;
+    public GameObject receiver;
     Create_Controller createscript;
 
     //変更箇所の数値
@@ -15,7 +15,6 @@ public class Move_Scale : MonoBehaviour
 
     void Start()
     {
-        receiver = GameObject.Find("Create_Controller");
         createscript = receiver.GetComponent<Create_Controller>();
     }
     public void OnClick()

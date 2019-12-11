@@ -6,14 +6,13 @@ using UnityEngine.SceneManagement;
 public class Title_Back : MonoBehaviour
 {
     public bool title_back;
-    GameObject save;
+    public GameObject save;
     Save savescript;
 
     public Fade fade;              //フェードキャンバス取得
 
     void Start()
     {
-        save = GameObject.Find("SelectSaveData");
         savescript = save.GetComponent<Save>();
     }
     public void OnClick()

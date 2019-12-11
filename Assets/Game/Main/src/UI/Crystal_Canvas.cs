@@ -7,10 +7,10 @@ public class Crystal_Canvas : MonoBehaviour
     public bool Gage;
     public bool Login;
     private Animator animator;
-    GameObject AnimUI;
+    public GameObject AnimUI;
     Animation_UI animuiscript;
 
-    GameObject Crystal_BarUI;
+    public GameObject Crystal_BarUI;
     Crystal_Bar Crystal_Barscript;
 
     // Start is called before the first frame update
@@ -18,10 +18,8 @@ public class Crystal_Canvas : MonoBehaviour
     {
         this.animator = GetComponent<Animator>();
 
-        AnimUI = GameObject.Find("ProfileUI");
         animuiscript = AnimUI.GetComponent<Animation_UI>();
 
-        Crystal_BarUI = GameObject.Find("Crystal_Bar");
         Crystal_Barscript = Crystal_BarUI.GetComponent<Crystal_Bar>();
     }
 

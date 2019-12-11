@@ -13,7 +13,7 @@ public class Create_Controller : MonoBehaviour
     public int makelimit;
     public int destroy_num;
 
-    GameObject Load;
+    public GameObject Load;
     Load_Controller loadscript;
 
     GameObject[] objGet = new GameObject[6];
@@ -43,7 +43,6 @@ public class Create_Controller : MonoBehaviour
     void Start()
     {
         numtext = UsesNum.GetComponent<Text>();
-        Load = GameObject.Find("Load_Controller");
         loadscript = Load.GetComponent<Load_Controller>();
 
         objGet[0] = GameObject.Find("posx+");

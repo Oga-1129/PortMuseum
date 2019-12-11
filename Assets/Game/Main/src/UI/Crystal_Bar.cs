@@ -8,13 +8,12 @@ public class Crystal_Bar : MonoBehaviour
     public bool barmove = false;
     Slider _slider;
 
-    GameObject Crystal_Canvas;
+    public GameObject Crystal_Canvas;
     Crystal_Canvas Crystal_Canvasscript;
     void Start()
     {
         // スライダーを取得する
         _slider = GameObject.Find("Crystal_Bar").GetComponent<Slider>();
-        Crystal_Canvas = GameObject.Find("Crystal_Canvas");
         Crystal_Canvasscript = Crystal_Canvas.GetComponent<Crystal_Canvas>();
     }
 

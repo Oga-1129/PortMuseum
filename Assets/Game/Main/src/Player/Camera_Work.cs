@@ -22,7 +22,6 @@ public class Camera_Work : MonoBehaviour
     public int[] UDLimit = new int[2];
 
     public const float DELTA_ANGLE = 1.0f;
-    public const float DELTA_DOLLY = 0.05f;
 
     float horizontalAngle;
     float verticalAngle;

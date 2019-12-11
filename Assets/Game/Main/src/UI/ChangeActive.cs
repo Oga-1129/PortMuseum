@@ -11,8 +11,6 @@ public class ChangeActive : MonoBehaviour
     AIMove[] aiscript = new AIMove[2];
     public int AI_arraysize;
 
-
-
     //Script配列
     Active_Script[] ActScript = new Active_Script[3];
 
@@ -20,17 +18,9 @@ public class ChangeActive : MonoBehaviour
 
     //ObjectName配列
     public GameObject[] ObjName = new GameObject[4];
-    // string[] ObjName = new string[4] { "PlayCanvas", "BuildCanvas", "MainCamera", "Camera" };
-    // string[] ObjName = new string[2] { "PlayCanvas", "BuildCanvas" };
 
     void Start()
     {
-        // for (int i = 0; i < 4; i++)
-        // {
-        //     Object[i] = GameObject.Find(ObjName[i]);
-        //     ActScript[i] = Object[i].GetComponent<ActiveScript>();
-        // }
-
         for (int i = 0; i < Activearraysize; i++)
         {
             ActScript[i] = ObjName[i].GetComponent<Active_Script>();
@@ -41,20 +31,9 @@ public class ChangeActive : MonoBehaviour
             aiscript[j] = NPC[j].GetComponent<AIMove>();
         }
 
-        // for (int i = 0; i < 2; i++)
-        // {
-        //     Object[i] = GameObject.Find(ObjName[i]);
-        //     ActScript[i] = Object[i].GetComponent<ActiveScript>();
-        // }
     }
     public void OnClick()
     {
-
-        // for (int i = 0; i < 4; i++)
-        // {
-        //     ActScript[i].setActive();
-        // }
-
         for (int i = 0; i < Activearraysize; i++)
         {
             ActScript[i].setActive();
@@ -64,9 +43,5 @@ public class ChangeActive : MonoBehaviour
         {
             aiscript[j].move = true;
         }
-        // for (int i = 0; i < 2; i++)
-        // {
-        //     ActScript[i].setActive();
-        // }
     }
 }

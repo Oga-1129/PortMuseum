@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class Save_Button : MonoBehaviour
 {
-    GameObject SaveMenu;
+    public GameObject SaveMenu;
     Save_Menu savemenuscript;
     void Start()
     {
-        SaveMenu = GameObject.Find("Save_Menu");
         savemenuscript = SaveMenu.GetComponent<Save_Menu>();
     }
     public void OnClick()

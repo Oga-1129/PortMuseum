@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class Close_Menu : MonoBehaviour
 {
-    GameObject AnimUI;
+    public GameObject AnimUI;
     Animation_UI animuiscript;
 
     void Start()
     {
-        AnimUI = GameObject.Find("ProfileUI");
         animuiscript = AnimUI.GetComponent<Animation_UI>();
     }
     //メニューを閉じるアニメーション

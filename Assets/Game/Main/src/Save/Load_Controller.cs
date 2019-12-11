@@ -6,10 +6,10 @@ using UnityEngine.Video;
 public class Load_Controller : MonoBehaviour
 {
 
-    GameObject DB;
+    public GameObject DB;
     MappingDataBase dbscript;
 
-    GameObject receiver;
+    public GameObject receiver;
     Create_Controller createscript;
 
     GameObject Make_Object;
@@ -49,10 +49,8 @@ public class Load_Controller : MonoBehaviour
     {
 
         Install = true;
-        DB = GameObject.Find("DataBaseObject");
         dbscript = DB.GetComponent<MappingDataBase>();
 
-        receiver = GameObject.Find("Create_Controller");
         createscript = receiver.GetComponent<Create_Controller>();
 
 
@@ -73,9 +71,6 @@ public class Load_Controller : MonoBehaviour
                 createscript.videonum[loadnum] = moviesnum;
                 createscript.createobject(createscript.Scale[loadnum, 0], createscript.Scale[loadnum, 1], createscript.Scale[loadnum, 2], createscript.Scale[loadnum, 3], loadnum, createscript.objectnum[loadnum - 1]);
                 createscript.MakeButton();
-            }
-            else
-            {
             }
         }
     }

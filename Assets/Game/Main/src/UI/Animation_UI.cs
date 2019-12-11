@@ -7,7 +7,7 @@ public class Animation_UI : MonoBehaviour
     private Animator animator;
     public bool OpenUI = false;
 
-    GameObject Crystal_Canvas;
+    public GameObject Crystal_Canvas;
     Crystal_Canvas Crystal_Canvasscript;
 
     public bool[] OpenProfile = new bool[4];
@@ -15,7 +15,6 @@ public class Animation_UI : MonoBehaviour
     {
         animator = GetComponent<Animator>();
 
-        Crystal_Canvas = GameObject.Find("Crystal_Canvas");
         Crystal_Canvasscript = Crystal_Canvas.GetComponent<Crystal_Canvas>();
     }
 

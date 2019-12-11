@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class OpCl_Profile : MonoBehaviour
 {
-    GameObject AnimUI;
+    public GameObject AnimUI;
     Animation_UI animuiscript;
     public int ButtonUINum;
 
     void Start()
     {
-        AnimUI = GameObject.Find("ProfileUI");
         animuiscript = AnimUI.GetComponent<Animation_UI>();
     }
 

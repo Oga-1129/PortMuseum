@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Make_Object : MonoBehaviour
 {
-    GameObject receiver;
+    public GameObject receiver;
     Create_Controller createscript;
 
 
@@ -16,7 +16,6 @@ public class Make_Object : MonoBehaviour
 
     void Start()
     {
-        receiver = GameObject.Find("Create_Controller");
         createscript = receiver.GetComponent<Create_Controller>();
     }
     public void OnClick()

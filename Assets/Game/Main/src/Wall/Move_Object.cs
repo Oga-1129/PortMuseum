@@ -104,8 +104,6 @@ public class Move_Object : MonoBehaviour
         {
             createscript.videonum[wall_num - 1] = 0;
         }
-        // Debug.Log("壁番号：" + wall_num);
-        // Debug.Log("Load時壁型番号：" + createscript.objectnum[wall_num - 1]);
         dbscript.UpDateDataBase(wall_num, eachscale[0], eachscale[1], eachscale[2], eachscale[3], eachscale[4], eachscale[5], createscript.objectnum[wall_num], createscript.videonum[wall_num]);
     }
 
