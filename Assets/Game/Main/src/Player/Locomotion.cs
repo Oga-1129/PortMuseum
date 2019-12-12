@@ -49,6 +49,10 @@ public class Locomotion : MonoBehaviour
     private Joystick _Velocityjoystick = null;
     void Update()
     {
+        if (Input.GetKey(KeyCode.S))
+        {
+            crystalcanvasscript.Gage = true;
+        }
         Vector3 pos = transform.position;
         controller.SimpleMove(transform.forward * _Velocityjoystick.Position.y * SPEED);
 
