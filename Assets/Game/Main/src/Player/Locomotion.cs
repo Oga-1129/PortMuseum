@@ -10,7 +10,7 @@ public class Locomotion : MonoBehaviour
     //CharacterControllerが必要
 
     //移動速度
-    private const float SPEED = 5.0f;
+    public float SPEED = 5.0f;
 
     public bool SeachBool;
 
