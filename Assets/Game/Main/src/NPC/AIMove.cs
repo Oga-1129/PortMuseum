@@ -47,9 +47,15 @@ public class AIMove : MonoBehaviour
         // エージェントが現在の巡回地点に到達したら
         if (!agent.pathPending && agent.remainingDistance < 0.5f && move)
         {
+            //NPCの歩行
             GetComponent<Animator>().SetBool("Move", true);
             // 次の巡回地点を設定する処理を実行
             GotoNextPoint();
+        }
+        else
+        {
+            //NPCの待機
+            GetComponent<Animator>().SetBool("Move", false);
         }
     }
 }

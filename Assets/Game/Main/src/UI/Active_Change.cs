@@ -46,7 +46,14 @@ public class Active_Change : MonoBehaviour
 
         for (int j = 0; j < AI_arraysize; j++)
         {
-            aiscript[j].move = true;
+            if (!aiscript[j].move)
+            {
+                aiscript[j].move = true;
+            }
+            else
+            {
+                aiscript[j].move = false;
+            }
         }
     }
 }
