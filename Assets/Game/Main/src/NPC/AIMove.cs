@@ -14,6 +14,8 @@ public class AIMove : MonoBehaviour
 
     public bool move;
 
+    private Animator animator;
+
     // ゲームスタート時の処理
     void Start()
     {
@@ -22,9 +24,8 @@ public class AIMove : MonoBehaviour
         // 巡回地点間の移動を継続させるために自動ブレーキを無効化
         //（エージェントは目的地点に近づいても減速しない)
         agent.autoBraking = true;
-        // 次の巡回地点の処理を実行
-        // GotoNextPoint();
-
+        // 自分に設定されているAnimatorコンポーネントを習得する
+        this.animator = GetComponent<Animator>();
     }
 
     // 次の巡回地点を設定する処理
@@ -46,6 +47,7 @@ public class AIMove : MonoBehaviour
         // エージェントが現在の巡回地点に到達したら
         if (!agent.pathPending && agent.remainingDistance < 0.5f && move)
         {
+            GetComponent<Animator>().SetBool("Move", true);
             // 次の巡回地点を設定する処理を実行
             GotoNextPoint();
         }
