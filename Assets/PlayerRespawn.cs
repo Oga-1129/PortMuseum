@@ -23,6 +23,5 @@ public class PlayerRespawn : MonoBehaviour
         Player.transform.position = this.transform.position;
         Player.transform.rotation = this.transform.rotation;
         fade.FadeOut(1f);
-        Debug.Log("落ちました");
     }
 }
