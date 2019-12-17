@@ -8,11 +8,11 @@ using System.Text;
 using UnityEditor;
 #endif
 
-
+#pragma warning disable CS0649
 namespace UniHumanoid
 {
     [Obsolete("use BvhImporterContext")]
-    public class ImporterContext: BvhImporterContext
+    public class ImporterContext : BvhImporterContext
     {
     }
 
@@ -212,6 +212,7 @@ namespace UniHumanoid
                 AssetDatabase.AddObjectToAsset(o, path);
             }
 
+#pragma warning disable CS0618
             // Create or upate Main Asset
             if (File.Exists(path))
             {

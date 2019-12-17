@@ -85,6 +85,7 @@ namespace VRM
 
                 return true;
             }
+#pragma warning disable CS0168
             catch (Exception e)
             {
                 return false;

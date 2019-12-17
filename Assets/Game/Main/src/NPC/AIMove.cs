@@ -52,10 +52,10 @@ public class AIMove : MonoBehaviour
             // 次の巡回地点を設定する処理を実行
             GotoNextPoint();
         }
-        else
-        {
-            //NPCの待機
-            GetComponent<Animator>().SetBool("Move", false);
-        }
+        // else
+        // {
+        //     //NPCの待機
+        //     GetComponent<Animator>().SetBool("Move", false);
+        // }
     }
 }

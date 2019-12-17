@@ -701,7 +701,7 @@ namespace UniGLTF
                 throw new Exception();
             }
         }
-
+#pragma warning disable CS0649
         [Serializable]
         class Dummy
         {

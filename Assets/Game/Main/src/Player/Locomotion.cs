@@ -14,6 +14,8 @@ public class Locomotion : MonoBehaviour
 
     public bool SeachBool;
 
+    public bool foll;
+
     private CharacterController controller;
 
     public GameObject AnimUI;
@@ -62,5 +64,8 @@ public class Locomotion : MonoBehaviour
         //アニメーションブレンド
         GetComponent<Animator>().SetFloat("X", _Velocityjoystick.Position.x);
         GetComponent<Animator>().SetFloat("Y", _Velocityjoystick.Position.y);
+
+        GetComponent<Animator>().SetFloat("Foll", this.transform.position.y);
+
     }//Update()
 }

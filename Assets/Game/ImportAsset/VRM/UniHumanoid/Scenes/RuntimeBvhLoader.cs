@@ -8,7 +8,7 @@ using System;
 using UnityEditor;
 #endif
 
-
+#pragma warning disable CS0649
 namespace UniHumanoid
 {
     public class RuntimeBvhLoader : MonoBehaviour

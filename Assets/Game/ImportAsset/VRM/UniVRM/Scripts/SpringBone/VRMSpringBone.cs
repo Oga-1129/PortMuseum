@@ -9,9 +9,10 @@ namespace VRM
     /// The base algorithm is http://rocketjump.skr.jp/unity3d/109/ of @ricopin416
     /// DefaultExecutionOrder(11000) means calclate springbone after FinaiIK( VRIK )
     /// </summary>
-    #if UNITY_5_5_OR_NEWER
+#pragma warning disable CS0649
+#if UNITY_5_5_OR_NEWER
     [DefaultExecutionOrder(11000)]
-    #endif
+#endif
     public class VRMSpringBone : MonoBehaviour
     {
         [SerializeField]
@@ -85,7 +86,7 @@ namespace VRM
             {
                 m_transform = transform;
                 var worldChildPosition = m_transform.TransformPoint(localChildPosition);
-                m_currentTail = center!= null
+                m_currentTail = center != null
                     ? center.InverseTransformPoint(worldChildPosition)
                     : worldChildPosition
                     ;
@@ -110,11 +111,11 @@ namespace VRM
                 float stiffnessForce, float dragForce, Vector3 external,
                 List<SphereCollider> colliders)
             {
-                var currentTail = center!=null
+                var currentTail = center != null
                     ? center.TransformPoint(m_currentTail)
                     : m_currentTail
                     ;
-                var prevTail = center!=null
+                var prevTail = center != null
                     ? center.TransformPoint(m_prevTail)
                     : m_prevTail
                     ;
@@ -132,11 +133,11 @@ namespace VRM
                 // Collisionで移動
                 nextTail = Collision(colliders, nextTail);
 
-                m_prevTail = center!=null
+                m_prevTail = center != null
                     ? center.InverseTransformPoint(currentTail)
                     : currentTail
                     ;
-                m_currentTail = center!=null
+                m_currentTail = center != null
                     ? center.InverseTransformPoint(nextTail)
                     : nextTail
                     ;
@@ -148,7 +149,7 @@ namespace VRM
             protected virtual Quaternion ApplyRotation(Vector3 nextTail)
             {
                 var rotation = ParentRotation * m_localRotation;
-                return Quaternion.FromToRotation(rotation * m_boneAxis, 
+                return Quaternion.FromToRotation(rotation * m_boneAxis,
                     nextTail - m_transform.position) * rotation;
             }
 
@@ -171,7 +172,7 @@ namespace VRM
 
             public void DrawGizmo(Transform center, float radius, Color color)
             {
-                var currentTail = center!=null
+                var currentTail = center != null
                     ? center.TransformPoint(m_currentTail)
                     : m_currentTail
                     ;
@@ -197,7 +198,7 @@ namespace VRM
         }
 
         [ContextMenu("Reset bones")]
-        public void Setup(bool force=false)
+        public void Setup(bool force = false)
         {
             if (RootBones != null)
             {
@@ -207,7 +208,7 @@ namespace VRM
                 }
                 else
                 {
-                    foreach(var kv in m_initialLocalRotationMap)
+                    foreach (var kv in m_initialLocalRotationMap)
                     {
                         kv.Key.localRotation = kv.Value;
                     }
@@ -219,7 +220,7 @@ namespace VRM
                 {
                     if (go != null)
                     {
-                        foreach(var x in go.transform.Traverse())
+                        foreach (var x in go.transform.Traverse())
                         {
                             m_initialLocalRotationMap[x] = x.localRotation;
                         }
@@ -232,7 +233,7 @@ namespace VRM
 
         static IEnumerable<Transform> GetChildren(Transform parent)
         {
-            for(int i=0; i<parent.childCount; ++i)
+            for (int i = 0; i < parent.childCount; ++i)
             {
                 yield return parent.GetChild(i);
             }
